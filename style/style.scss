@@ -1,0 +1,48 @@
+@import "mixins";
+@import "variables";
+
+* {
+    @include reset;
+}
+
+body {
+    @include flex;
+    height: 100vh;
+    background-color: #604CBB;
+
+    .loader {
+        display: flex;
+        position: relative;
+
+        div {
+            width: 1em;
+            height: 1em;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: loader 0.5s infinite ease;
+            position: absolute;
+
+            &:nth-child(1) {
+                left: 0;
+                animation-name: reveal;
+            }
+
+            &:nth-child(2) {
+                left: 0;
+                animation-name: slide;
+            }
+
+            &:nth-child(3) {
+                left: 1.5em;
+                animation-name: slide;
+            }
+
+            &:nth-child(4) {
+                left: 3em;
+                animation-name: reveal;
+                animation-direction: reverse;
+            }
+        }
+    }
+
+}
